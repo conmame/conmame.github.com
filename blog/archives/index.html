@@ -165,25 +165,21 @@ Sep 09 2012 Recent Posts Octpress初めてみた GitHub Repos Status updating...
 </section>
 
 
-<section class="well">
+<section>
   <ul class="nav">
     <li class="nav-header">Coderwall Badges</li>
   </ul>
-  <div id="coderwall_badges"></div>
+  <div id="coderwall_badges" style='display:block'></div>
   <a href="http://coderwall.com/conmame">@conmame</a> on coderwall
   <script type="text/javascript">
     $(document).ready(function(){
-      $.getJSON("http://coderwall.com/conmame.json?callback=?", function(data){
-        for(var i = 0; i < data.data.badges.length ; i++){
-          var badge = data.data.badges[i];
-          var badge_tag = $("<img />");
-          badge_tag.attr("src",badge.badge);
-          badge_tag.css("width","50%");
-          $("#coderwall_badges").append(badge_tag);
-        }
-      });
+        coderwall.showBadges({
+            user: 'conmame',
+            target: '#coderwall_badges'
+        });
     });
   </script>
+  <script src="/javascripts/coderwall.js" type="text/javascript"> </script>
 </section>
 
   
@@ -212,6 +208,14 @@ Sep 09 2012 Recent Posts Octpress初めてみた GitHub Repos Status updating...
 }(document, 'script', 'facebook-jssdk'));</script>
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 
