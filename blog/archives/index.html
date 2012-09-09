@@ -10,7 +10,7 @@
 
   
   <meta name="description" content="Blog Archive 2012 Octpress初めてみた
-Sep 09 2012 Recent Posts Octpress初めてみた GitHub Repos Status updating... @conmame on GitHub github.showRepos({ user: ' &hellip;">
+Sep 09 2012 Recent Posts Octpress初めてみた GitHub Repos Status updating... @conmame on GitHub $.domReady(function(){ if &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -127,6 +127,15 @@ Sep 09 2012 Recent Posts Octpress初めてみた GitHub Repos Status updating...
   <a href="https://github.com/conmame">@conmame</a> on GitHub
   
   <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
         github.showRepos({
             user: 'conmame',
             count: 5,
